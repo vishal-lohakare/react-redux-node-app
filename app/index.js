@@ -1,17 +1,17 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import './index.css';
-import GridEmployee from './components/grid/grid';
+import React from 'react'
+import ReactDOM from 'react-dom'
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import './index.css'
+import App from './App'
+import EmployeeEditDetails from './components/EmployeeDetails/EmployeeEditDettailsHooks'
 
-class App extends React.Component {
-    render() {
-        return (
-            <div>Hello World
-                <h1>Hi new react there!!</h1>
-                <GridEmployee />
-            </div>
-        )
-    }
-}
-
-ReactDOM.render(<App/>, document.getElementById('app'))
+const routing = (
+    <Router>
+        <div>
+            {/*<Link to='/EmployeeEditDetails'>EmployeeEditDetails </Link>*/}
+            <Route exact path="/EmployeeEditDetails" component={EmployeeEditDetails} />
+            <Route exact path="/" component={App} />
+        </div>
+    </Router>
+)
+ReactDOM.render(routing, document.getElementById('app'))
